@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 00:42:43 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/13 17:07:51 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/17 12:59:10 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int mainc(int argc, char **argv)
 {
 	int		n;
-	char	**arguments;
+	char	**argum;
 	t_list	**stack_a;
 	t_list	**stack_b;
 
@@ -23,7 +23,9 @@ int mainc(int argc, char **argv)
 		return (0);
 	while (argc > 1)
 	{
-		
+		argum = ft_split(argv[i], ' ');
+		ft_swap(argum);
+		n++;	
 		argc--;
 	}
 }
