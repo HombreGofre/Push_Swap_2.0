@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 00:42:43 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/17 12:59:10 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:22:39 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int mainc(int argc, char **argv)
 		n++;	
 		argc--;
 	}
+	ft_check_error()
+	ft_arlog
 }
 
 /*
@@ -37,3 +39,4 @@ int mainc(int argc, char **argv)
  * "argv" en un array de enteros en los que las funciones a realizar serán los controles
  * de errores. Una vez corroborados los errores se añadirá lso números en forma de nodos 
  * al "stack_a" para después su posterior ordenación con las fucniones correspondientres.
+ */
