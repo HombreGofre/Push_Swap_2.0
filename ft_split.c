@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:06:44 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/19 18:00:08 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:12:33 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static	char	**ft_freesplit(char **s)
 	return (NULL);
 }
 
-static char	**ft_initsplit(char *s, char c)
+static char	**ft_initsplit(char const *s, char c)
 {
 	if (!s)
 		return (NULL);
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		new[len++] = ft_substr(s, start, i - start);
 		if (!new[len - 1])
-			return (ft_fresplit(new));
+			return (ft_freesplit(new));
 	}
 	new[len] = NULL;
 	return (new);
