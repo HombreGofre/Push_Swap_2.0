@@ -6,31 +6,20 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:12:52 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/20 17:43:38 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/24 16:50:52 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*t_list	**ft_firstmov(char	**tmp)
-{
-	t_list	**lst_a;
-	int		i;
-
-	i = 0;
-
-	return (lst_a);
-}*/
-
-void	*ft_parse(char	*tmp)
+void	*ft_parse(char	*tmp, int	*at)
 {
 	int	i;
 
 	i = 0;
 	while (tmp[i])
 	{
-		if (tmp[i] == ' ')
-			ft_error();
+		//printf("[%d] -> '%c'\n", i, tmp[i]);
 		if ((tmp[i] == '-' || tmp[i] == '+')
 				&& (tmp[i + 1] == '-' || tmp[i + 1] == '+'))
 			ft_error();
@@ -46,18 +35,33 @@ void	*ft_parse(char	*tmp)
 	return (0);
 }
 
+t_list	**ft_firstmov(char	**tmp)
+{
+	t_list	**lst_a;
+	int		i;
+
+	i = 0;
+	lst_a = ft_lstnew(ft_atoi(tmp[i]))
+	while (tmp[++i])
+		ft_lstadd_back(lst_a ,ft_atoi(tmp[i]));
+	return (lst_a);
+}
+
 void	**ft_swap(char **arg)
 {
 	int		i;
+	int		*at;
 	char	**tmp;
 	//t_list	**nums;
 
 	i = 0;
 	tmp = arg;
+	at =  0;
 	while (tmp[i])
 	{
+		//printf("Swap: %s\n", tmp[i]);
 		ft_parse(tmp[i]);
-		//nums = ft_firstmov(tmp[i]);
+		nums = ft_firstmov(tmp[i]);
 		i++;
 	}
 	//return (nums);

@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 23:57:50 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/20 17:25:14 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/24 18:16:31 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,19 @@ char	*ft_substr(char const *s, unsigned int	start, size_t	len);
 size_t	ft_strlen(char const *c);
 char	**ft_split(char const *s, char c);
 int		ft_isdigit(int	i);
+long int	ft_atoi(char const *s);
 
 //PARSE
 
 void	ft_error(void);
 void	*ft_parse(char	*tmp);
 void	**ft_swap(char	**arg);
+t_list	**ft_firstmov(char	**tmp);
+
+//T_LIST
+
+t_list	*ft_lstnew(int	i);
+t_list	*ft_lstlast(t_list	*lst);
+void	ft_lstadd_back(t_list **lst, t_list	*new);
 
 #endif
