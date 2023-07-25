@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:12:52 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/24 16:50:52 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/26 00:33:20 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	*ft_parse(char	*tmp, int	*at)
 			ft_error();
 		if (!ft_isdigit(tmp[i]))
         {
-            printf("El problema está aauí\n");
+//            printf("El problema está aauí\n");
             ft_error();
         }
 		i++;
 	}
-	return (0);
+
 }
 
 t_list	**ft_firstmov(char	**tmp)
@@ -47,12 +47,34 @@ t_list	**ft_firstmov(char	**tmp)
 	return (lst_a);
 }
 
-void	**ft_swap(char **arg)
+int	ft_check_nums(char	**num)
+{
+	int		i;
+	int		j;
+	char	**tmp;
+
+	i = 0;
+	j = 1;
+	tmp = num;
+	while (num[i]) 
+	{
+		while (tmp[j] && tmp[j] != num[i])
+		{
+			if (tmp[j] == num[i] || tmp[i] > num[i])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+t_list	**ft_swap(char **arg)
 {
 	int		i;
 	int		*at;
 	char	**tmp;
-	//t_list	**nums;
+	t_list	**nums;
 
 	i = 0;
 	tmp = arg;
@@ -62,10 +84,11 @@ void	**ft_swap(char **arg)
 		//printf("Swap: %s\n", tmp[i]);
 		ft_parse(tmp[i]);
 		nums = ft_firstmov(tmp[i]);
+		if (!ft_check_nums(tmp[i]))
+			ft_error();
 		i++;
 	}
-	//return (nums);
-	return (0);
+	return (nums);
 }
 
 /*

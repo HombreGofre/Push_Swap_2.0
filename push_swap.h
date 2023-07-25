@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 23:57:50 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/24 18:16:31 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/26 00:32:14 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ long int	ft_atoi(char const *s);
 
 void	ft_error(void);
 void	*ft_parse(char	*tmp);
-void	**ft_swap(char	**arg);
+int		ft_check_nums(char	**num);
+t_list	**ft_swap(char	**arg);
 t_list	**ft_firstmov(char	**tmp);
 
 //T_LIST
