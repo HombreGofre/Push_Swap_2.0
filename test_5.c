@@ -2,24 +2,21 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int ft_check_nums(char  *num)
+int ft_check_dup(char   *num)
 {
     int     i;
     int     j;
-    int     k;
+    char    *aux;
 
     i = 0;
+    aux = num;
     while (num[i] != '\0')
     {
         j = i + 1;
-        k = i + 1;
-        while (num[i] && num[j] &&  num[k])
+        while (aux[j])
         {
-            if (num[i] > num[k])
-                return (1);
-            if (num[i] == num[j])
-                return (0);
-            k++;
+            if (aux[j] == num[i])
+                return(1);
             j++;
         }
         i++;
@@ -27,11 +24,30 @@ int ft_check_nums(char  *num)
     return (0);
 }
 
+int ft_check_sort(char  *num)
+{
+    int     i;
+    int     j;
+    char    *aux;
+
+    i = 0;
+    j = 1;
+    aux = num;
+    while (aux[j] != '\0')
+    {
+        if (num[i] > aux[j])
+            return (1);
+        i++;
+        j++;
+    }
+    return (0);
+}
+
 int main()
 {
-    char    str[]="1263445";
+    char    str[]="15235";
 
-    if (!ft_check_nums(str))
+    if (ft_check_dup(str) || !ft_check_sort(str))
         printf("Deberia dar exit");
     else
         printf("seguiria con la funcion");

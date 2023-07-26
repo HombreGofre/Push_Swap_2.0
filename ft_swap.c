@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:12:52 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/26 00:33:20 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/26 23:05:44 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,43 @@ t_list	**ft_firstmov(char	**tmp)
 	return (lst_a);
 }
 
-int	ft_check_nums(char	**num)
+int	ft_check_dup(char	**num)
 {
 	int		i;
 	int		j;
-	char	**tmp;
+	char	**aux;
 
 	i = 0;
-	j = 1;
-	tmp = num;
-	while (num[i]) 
+	aux = num;
+	while (num[i] != '\0')
 	{
-		while (tmp[j] && tmp[j] != num[i])
+		j = i + 1;
+		while (aux[j])
 		{
-			if (tmp[j] == num[i] || tmp[i] > num[i])
-				return (1);
+			if (aux[j] == num[i])
+				return(1);
 			j++;
 		}
 		i++;
+	}
+	return (0);
+}
+
+int	ft_check_sort(char	**num)
+{
+	int		i;
+	int		j;
+	char	**aux;
+
+	i = 0;
+	j = 1;
+	aux = num;
+	while (aux[j] != '\0')
+	{
+		if (num[i] > aux[j])
+			return (1);
+		i++;
+		j++;
 	}
 	return (0);
 }
@@ -84,13 +103,12 @@ t_list	**ft_swap(char **arg)
 		//printf("Swap: %s\n", tmp[i]);
 		ft_parse(tmp[i]);
 		nums = ft_firstmov(tmp[i]);
-		if (!ft_check_nums(tmp[i]))
-			ft_error();
 		i++;
 	}
+	if (ft_check_dup(tmp) || !ft_check_sort(tmp))
+		ft_error;
 	return (nums);
 }
-
 /*
  * Desde que el programa entra en swap se quiere lograr añadir en orden en
  * el que aparecen los números ya casteados dentro de la lista enlazada
