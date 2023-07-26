@@ -6,18 +6,34 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 00:42:43 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/24 15:00:19 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/27 00:16:03 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_lgorithm(t_list	**stack_a, t_list	**stack_b)
+{
+	int	i;
+
+	i = ft_lstlen(stack_a);
+
+	if (i <= 3)
+		ft_three(stack_a, stack_b);
+	else if (i > 3 && i >= 5)
+		ft_five(stack_a, stack_b);
+	else if (i <= 100)
+		ft_hundred(stack_a, stack_b);
+	else if (i <= 500)
+		ft_huge(stack_a, stack_b);
+}
+
 int main(int argc, char **argv)
 {
 	int		n;
 	char	**argm;
-	//t_list	**stack_a;
-	//t_list	**stack_b;
+	t_list	**stack_a;
+	t_list	**stack_b;
 
 	if (argc <= 1)
 		return (0);
@@ -25,10 +41,10 @@ int main(int argc, char **argv)
 	while (n < argc)
 	{
 		argm = ft_split(argv[n], ' ');
-		ft_swap(argm);
+		stack_a = ft_swap(argm);
 		n++;	
 	}
-	return (0);
+	ft_algorithm(stack_a, stack_b);
 }
 
 /*

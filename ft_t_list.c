@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:13:58 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/24 16:50:55 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/27 00:07:17 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,21 @@ t_list	ft_lstnew(int i)
 	new -> next = NULL;
 	new -> content = i;
 	return (new);
+}
+
+int	ft_lstlen(t_list	**lst)
+{
+	int	i;
+
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst -> next != NULL)
+	{
+		i++;
+		lst = lst -> next;
+	}
+	return (i);
 }
 
 t_list	*ft_lstlast(t_list *lst)
