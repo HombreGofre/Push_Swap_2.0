@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:13:58 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/27 00:07:17 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/07/28 17:03:00 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	ft_lstnew(int i)
 {
 	t_list	*new;
 
-	new = malloc(sizeof(t_lsit));
+	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
 	new -> next = NULL;
@@ -43,25 +43,32 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*tmp;
 
-	tmp = lst;
-	while (tmp -> next != NULL)
+	while (lst -> next != NULL)
 	{
-		tmp = tmp -> next;
+		tmp = lst;
+		lst = lst -> next;
 	}
-	return tmp;
+	return (tmp);
 }
 
 void	ft_lstadd_back(t_list **lst, t_list	*new)
 {
 	t_list	*tmp;
 
-	if (!*lst)
+	if (!lst == NULL || new  == NULL)
 		return ;
-	if (lst)
+	if (*lst ! = NULL)
 	{
-		tmp = ft_lstlast(lst);
+		tmp = ft_lstlast(*lst);
 		tmp -> next = new;
 	}
 	else
 		*lst = new;
+}
+
+void	ft_lstadd_front(t_list	**lst, t_list *new)
+{
+	if (*lst)
+		new -> next = *lst;
+	*lst = new;
 }
