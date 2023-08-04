@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:49:14 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/30 21:52:06 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/08/04 22:27:59 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_rev_rotate_ra(t_list **stack_a)
 	ft_lstadd_front(stack_a, last);
 }
 
-void    ft_rev_rotate_ra(t_list **stack_b)
+void    ft_rev_rotate_rb(t_list **stack_b)
 {
     t_list  *last;
     t_list  *del;
@@ -42,7 +42,7 @@ void    ft_rev_rotate_ra(t_list **stack_b)
     ft_lstadd_front(stack_b, last);
 }
 
-void	ft_rev_rotate_rr(t_list	**stack_a, t_list	**stack_b)
+void	ft_rev_rotate_rr(t_list	**stack_a, t_list **stack_b)
 {
 	ft_rev_rotate(stack_a);
 	ft_rev_rotate(stack_b);

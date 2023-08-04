@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 23:57:50 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/28 17:14:11 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/08/04 22:28:27 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,11 @@ int		ft_lstlen(stack_a, stack_b);
 void	ft_swap_sa(t_list **stack_a);
 void	ft_swap_sb(t_list **stack_b);
 void	ft_swap_ss(t_list **stack_a, t_ñlist **stack_b);
+void	ft_rotate_ra(t_list	**stack_a);
+void	ft_rotate_rb(t_list	**stack_b);
+void	ft_rotate_rr(t_list	**stack_a, t_list **stack_b);
+void	ft_rev_rotate_ra(t_list	**stack_a);
+void	ft_rev_rotate_rb(t_list	**stack_b);
+void	ft_rev_rotate_rr(t_list	**stack_a, t_list **stack_b);
 
 #endif
