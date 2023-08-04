@@ -55,12 +55,16 @@ void ft_lstadd_front(t_list	**lst, t_list	*new)
 	*lst = new;
 }
 
-void	ft_rotate_ra(t_list	**lst)
+void	ft_rev_rotate_ra(t_list	**lst)
 {
 	t_list	*last;
+	t_list	*aux;
 
-	last = *lst;
-	*lst = (*lst)->next;
+	if (!(*lst) || !(*lst)->next)
+		return ;
+	last = ft_lstlast(*lst);
+	aux = *lst;
+	while ()
 	last -> next = NULL;
 	ft_lstadd_back(lst, last);
 	printf("\nra\n");
