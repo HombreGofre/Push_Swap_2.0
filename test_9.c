@@ -25,7 +25,7 @@ t_list	*ft_lstlast(t_list	*lst)
 {
 	t_list	*tmp;
 
-	while (lst -> next != NULL)
+	while (lst)
 	{
 		tmp = lst;
 		lst = lst -> next;
@@ -66,8 +66,8 @@ void	ft_rev_rotate_ra(t_list	**lst)
 	aux = *lst;
 	while (aux->next != last)
 		aux = aux->next;
-	last -> next = NULL;
-	ft_lstadd_back(lst, last);
+	aux -> next = NULL;
+	ft_lstadd_front(lst, last);
 	printf("\nra\n");
 }
 
