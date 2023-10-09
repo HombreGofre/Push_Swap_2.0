@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 00:42:43 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/07/27 00:16:03 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:04:14 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lgorithm(t_list	**stack_a, t_list	**stack_b)
 	i = ft_lstlen(stack_a);
 
 	if (i <= 3)
-		ft_three(stack_a, stack_b);
+		ft_three(stack_a);
 	else if (i > 3 && i >= 5)
 		ft_five(stack_a, stack_b);
 	else if (i <= 100)

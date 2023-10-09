@@ -6,7 +6,7 @@
 /*   By: cnunez-s <cnunez-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 23:57:50 by cnunez-s          #+#    #+#             */
-/*   Updated: 2023/08/04 22:28:27 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2023/10/09 22:29:45 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ size_t	ft_strlen(char const *c);
 char	**ft_split(char const *s, char c);
 int		ft_isdigit(int	i);
 long int	ft_atoi(char const *s);
+int		ft_small(t_list	**stack_a);
 
 //PARSE
 
@@ -56,12 +57,19 @@ int		ft_lstlen(stack_a, stack_b);
 
 void	ft_swap_sa(t_list **stack_a);
 void	ft_swap_sb(t_list **stack_b);
-void	ft_swap_ss(t_list **stack_a, t_ñlist **stack_b);
+void	ft_swap_ss(t_list **stack_a, t_list **stack_b);
 void	ft_rotate_ra(t_list	**stack_a);
 void	ft_rotate_rb(t_list	**stack_b);
 void	ft_rotate_rr(t_list	**stack_a, t_list **stack_b);
 void	ft_rev_rotate_ra(t_list	**stack_a);
 void	ft_rev_rotate_rb(t_list	**stack_b);
 void	ft_rev_rotate_rr(t_list	**stack_a, t_list **stack_b);
+void	ft_pa(t_list **stack_a, t_list **stack_b);
+void	ft_pb(t_list **stack_a, t_list **stack_b);
+
+//ALGORITHM
+
+void	ft_three(t_list	**stack_a);
+void	ft_five(t_list **stack_a, t_list **stack_b);
 
 #endif
